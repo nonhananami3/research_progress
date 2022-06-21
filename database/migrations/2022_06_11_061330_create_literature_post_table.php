@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostReferenceTable extends Migration
+class CreateLiteraturePostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePostReferenceTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_reference', function (Blueprint $table) {
-            $table->bigIncrements('post_reference_id');
+        Schema::create('literature_post', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->bigInteger('post_id')->unsigned();
-            $table->bigInteger('reference_id')->unsigned();
+            $table->bigInteger('literature_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +29,6 @@ class CreatePostReferenceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_reference');
+        Schema::dropIfExists('literature_post');
     }
 }
