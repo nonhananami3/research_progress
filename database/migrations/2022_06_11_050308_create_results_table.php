@@ -14,8 +14,8 @@ class CreateResultsTable extends Migration
     public function up()
     {
         Schema::create('results', function (Blueprint $table) {
-            $table->bigIncrements('result_id');
-            $table->string('result');
+            $table->bigIncrements('id');
+            $table->string('body');
             $table->string('remark_body')->nullable();
             $table->timestamps();
             $table->softDeletes();

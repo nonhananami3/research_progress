@@ -14,7 +14,7 @@ class CreateThemeUserTable extends Migration
     public function up()
     {
         Schema::create('theme_user', function (Blueprint $table) {
-            $table->bigIncrements('theme_user_id');
+            $table->bigIncrements('id');
             $table->bigInteger('theme_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
